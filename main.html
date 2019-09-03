@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript function to get a random item from an array.</title>
+    <title> JS RPS</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <h1> Rock, Paper, Scissor</h1>
+  
+
+  <body>
+    <img id="rock" class="choices" src="https://compote.slate.com/images/e106a9e3-78e9-4bce-9c5d-2b8dcd7ada0f.jpg">
+    <img id="paper" class="choices" src="https://www.talasonline.com/core/media/media.nl?id=417513&c=672026&h=e5f4847cb1cf90035792">
+    <img id="scissor" class="choices" src="https://cdn.imgbin.com/16/2/2/imgbin-cartoon-scissors-animation-scissors-bUR0iJcawzbqTnQHT4DudgzXi.jpg">
+    <script src="index.js"></script>
+
+    <div class="game">
+
+  <script>
+  var userChoice = prompt(" What do you chose? Rock, Paper, Scissors");
+  if (!userChoice) {
+    document.write("<p>Player 1:" + " " + userChoice + "</p>");
+  }
+  var compChoice = alert ("Comp chooses ...");
+  if (!compChoice) {
+    document.write("<p>Computer:" + " " + computerChoice + "</p>");
+  }
+  var results = compare(userChoice,computerChoice);
+  document.write("<br><hr><br>" + results);
+  </script>
+    </div>
+  
+  </body>
+</html>
