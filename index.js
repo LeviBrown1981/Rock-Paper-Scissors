@@ -2,20 +2,20 @@ var rock = document.getElementById("rock");
 var paper = document.getElementById("paper");
 var scissor = document.getElementById("scissor");
 var userChoice;
-var computerChoice = Math.random();
-    if (computerChoice < 0.34) {
-        computerChoice = "rock";
-  } else if(computerChoice <= 0.67) {
-        computerChoice = "paper";
+var compChoice = Math.random();
+    if (compChoice < 0.34) {
+        compChoice = "rock";
+  } else if(compChoice <= 0.67) {
+        compChoice = "paper";
   } else {
-        computerChoice = "scissors";
+        compChoice = "scissors";
   }
-var compare = function(choice1,choice2) {
-  if (choice1 === choice2) {
+var compare = function(userChoice,compChoice) {
+  if (userChoice === compChoice) {
     return "It's a tie!";
 }
-if (choice1 === "rock") {
-    if (choice2 === "scissors") {
+if (userChoice === "rock") {
+    if (compChoice === "scissors") {
         // rock wins
         return "You win!";
     } else {
@@ -23,8 +23,8 @@ if (choice1 === "rock") {
         return "You lose! Try again.";
     }
 }
-if (choice1 === "paper") {
-    if (choice2 === "rock") {
+if (userChoice === "paper") {
+    if (compChoice === "rock") {
         // paper wins
         return "You win!";
     } else {
@@ -32,8 +32,8 @@ if (choice1 === "paper") {
         return "You lose! Try again.";
     }
 }
-if (choice1 === "scissors") {
-    if (choice2 === "rock") {
+if (userChoice === "scissors") {
+    if (compChoice === "rock") {
         // rock wins
         return "You lose! Try again.";
     } else {
@@ -44,18 +44,18 @@ if (choice1 === "scissors") {
 };
 
 rock.addEventListener( "click", function() {
-  userChoice = this.id;
+  userChoice = this.id
+  
   function random_compChoice(compChoice) {
     return compChoice[Math.floor(Math.random()*compChoice.length)];
   }
-  //display those choices to the browser
-  //decide who wins 
 });
 
-var results = compare(userChoice,computerChoice);
+var results = compare(userChoice,compChoice);
 
 paper.addEventListener( "click", function() {
   userChoice = this.id;
+  
   function random_compChoice(compChoice) {
     return compChoice[Math.floor(Math.random()*compChoice.length)];
   }
