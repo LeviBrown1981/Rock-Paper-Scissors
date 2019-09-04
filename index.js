@@ -2,20 +2,20 @@ var rock = document.getElementById("rock");
 var paper = document.getElementById("paper");
 var scissor = document.getElementById("scissor");
 var userChoice;
-var compChoice = Math.random();
-    if (compChoice < 0.34) {
-        compChoice = "rock";
-  } else if(compChoice <= 0.67) {
-        compChoice = "paper";
+var computerChoice = Math.random();
+    if (computerChoice < 0.34) {
+        computerChoice = "rock";
+  } else if(computerChoice <= 0.67) {
+        computerChoice = "paper";
   } else {
-        compChoice = "scissors";
+        computerChoice = "scissors";
   }
-var compare = function(userChoice,compChoice) {
-  if (userChoice === compChoice) {
+var compare = function(choice1,choice2) {
+  if (choice1 === choice2) {
     return "It's a tie!";
 }
-if (userChoice === "rock") {
-    if (compChoice === "scissors") {
+if (choice1 === "rock") {
+    if (choice2 === "scissors") {
         // rock wins
         return "You win!";
     } else {
@@ -23,8 +23,8 @@ if (userChoice === "rock") {
         return "You lose! Try again.";
     }
 }
-if (userChoice === "paper") {
-    if (compChoice === "rock") {
+if (choice1 === "paper") {
+    if (choice2 === "rock") {
         // paper wins
         return "You win!";
     } else {
@@ -32,8 +32,8 @@ if (userChoice === "paper") {
         return "You lose! Try again.";
     }
 }
-if (userChoice === "scissors") {
-    if (compChoice === "rock") {
+if (choice1 === "scissors") {
+    if (choice2 === "rock") {
         // rock wins
         return "You lose! Try again.";
     } else {
@@ -43,25 +43,25 @@ if (userChoice === "scissors") {
 }
 };
 
-rock.addEventListener( "click", function() {
-  userChoice = this.id
-  
+ rock.addEventListener( "click", function() {
+  userChoice = this.id;
   function random_compChoice(compChoice) {
     return compChoice[Math.floor(Math.random()*compChoice.length)];
   }
+  //display those choices to the browser
+  //decide who wins 
 });
 
-var results = compare(userChoice,compChoice);
+ var results = compare(userChoice,computerChoice);
 
-paper.addEventListener( "click", function() {
+ paper.addEventListener( "click", function() {
   userChoice = this.id;
-  
   function random_compChoice(compChoice) {
     return compChoice[Math.floor(Math.random()*compChoice.length)];
   }
 })
 
-scissor.addEventListener( "click", function() {
+ scissor.addEventListener( "click", function() {
   userChoice = this.id;
   function random_compChoice(compChoice) {
     return compChoice[Math.floor(Math.random()*compChoice.length)];
